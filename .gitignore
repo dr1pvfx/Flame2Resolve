@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.flame2resolve/
+local/
+*.drt
+*.seg
+*.log
+.env
+.DS_Store

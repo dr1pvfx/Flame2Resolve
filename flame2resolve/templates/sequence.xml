@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DbAppVer="21.0.4.0005" DbPrjVer="17"-->
+<Sm2SequenceContainer DbId="e35b3bab-a55b-4bae-92bb-fa645bf484de">
+ <FieldsBlob />
+ <VideoTrackVec>
+  <Element>
+   <Sm2TiTrack DbId="c2d43707-c503-44f7-9b54-964ae2a8fe3b">
+    <FieldsBlob>000000010000000100000012004e0075006d004c00610079006500720073000000020000000000</FieldsBlob>
+    <Type>0</Type>
+    <SubType>0</SubType>
+    <Flags>0</Flags>
+    <Sequence>60634afb-e65d-4642-96f3-517a49368631</Sequence>
+    <Items>
+     <Element>
+      <Sm2TiVideoClip DbId="3cd73249-ec88-499a-afb8-0df5de77645f">
+       <FieldsBlob>000000020000001d800a050a03a8010012100000000000000006ffffffffffffffff980101</FieldsBlob>
+       <PrettyType />
+       <Name>source.[1001-1032].exr</Name>
+       <Start>0</Start>
+       <Duration>10</Duration>
+       <LinkedItemSync />
+       <WasDisbanded>false</WasDisbanded>
+       <MarkersBA />
+       <UiMemento>0</UiMemento>
+       <Flags>0</Flags>
+       <PriorityIndex>0</PriorityIndex>
+       <EffectFiltersBA />
+       <ImportExportMetadataBA />
+       <RenderTextEnabled>true</RenderTextEnabled>
+       <RenderTextGanged>true</RenderTextGanged>
+       <RenderTextPrefixed>true</RenderTextPrefixed>
+       <In>2</In>
+       <MixedFrameRateAlignment>0</MixedFrameRateAlignment>
+       <MediaRef>b1b952f4-4481-4d75-97ed-4e83d353398f</MediaRef>
+       <MediaStartTime>0</MediaStartTime>
+       <MediaFilePath>/archive/source.[1001-1032].exr</MediaFilePath>
+       <MediaReelNumber />
+       <MediaFrameRate>00000000000038400000000000000000</MediaFrameRate>
+       <MediaTimemapBA>023ff4aaaaaaaaaaaa</MediaTimemapBA>
+       <LastChangedTime>0</LastChangedTime>
+       <LastRenderedTime>0</LastRenderedTime>
+       <IsMarkedForCaching>false</IsMarkedForCaching>
+       <IsForceConformed>true</IsForceConformed>
+       <MatchConflictState>0</MatchConflictState>
+       <UseOppositeSrcForLeftEye>false</UseOppositeSrcForLeftEye>
+       <UseOppositeSrcForRightEye>false</UseOppositeSrcForRightEye>
+       <RenderCacheBA />
+       <CurrentSelectorIdx>909127733</CurrentSelectorIdx>
+       <IsPreConformed>false</IsPreConformed>
+       <PreConformMediaExtents>00000100000030c20000010000003042</PreConformMediaExtents>
+       <MediaMetadata />
+       <Thumbnail>
+        <BtThumnail DbId="36e68645-2419-434f-8970-45b1c1cd60b1">
+         <FieldsBlob />
+         <ImgWidth>-1</ImgWidth>
+         <ImgHeight>-1</ImgHeight>
+         <Buffer />
+        </BtThumnail>
+       </Thumbnail>
+       <ThumbnailDirtyFlag>true</ThumbnailDirtyFlag>
+      </Sm2TiVideoClip>
+     </Element>
+    </Items>
+    <FusionCompHolderItems />
+    <UserDefinedName />
+    <LayersVec />
+   </Sm2TiTrack>
+  </Element>
+ </VideoTrackVec>
+ <AudioTrackVec>
+  <Element>
+   <Sm2TiTrack DbId="1487429b-e2c8-4363-8017-db2f057e1543">
+    <FieldsBlob>000000010000000200000012004e0075006d004c006100790065007200730000000200000000000000003e004500780063006c0075006400650054007200610063006b00460072006f006d00530065007100750065006e0063006500430061006300680069006e0067000000010001</FieldsBlob>
+    <Type>1</Type>
+    <SubType>0</SubType>
+    <Flags>0</Flags>
+    <Sequence>60634afb-e65d-4642-96f3-517a49368631</Sequence>
+    <Items />
+    <FusionCompHolderItems />
+    <UserDefinedName />
+    <LayersVec />
+   </Sm2TiTrack>
+  </Element>
+ </AudioTrackVec>
+ <SubtitleTrackVec />
+ <GeometryTrackVec />
+ <DbSavedTime>0</DbSavedTime>
+</Sm2SequenceContainer>

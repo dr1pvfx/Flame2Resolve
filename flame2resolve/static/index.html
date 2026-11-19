@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Flame to Resolve</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="bar">
+    <div class="wrap header-inner">
+      <a class="brand" href="/"><img src="/icon.svg" alt="" width="34" height="34"> Flame to Resolve</a>
+      <button class="quiet" id="sign-out" type="button" hidden>Sign out</button>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="login" class="gate" hidden>
+      <div class="intro">
+        <h1>Recover a Flame timeline.</h1>
+        <p>Open a sequence archive and take an editable timeline into DaVinci Resolve.</p>
+      </div>
+      <form class="panel" id="login-form">
+        <label for="password">Development password</label>
+        <div class="password-row">
+          <input id="password" type="password" required maxlength="512" autocomplete="current-password">
+          <button type="submit">Unlock</button>
+        </div>
+        <p class="error" id="login-error" role="alert" hidden></p>
+      </form>
+    </section>
+    <section id="work" hidden>
+      <div class="intro">
+        <h1>Recover a Flame timeline.</h1>
+        <p>Choose a sequence, set its media paths and framing, and download a Resolve timeline.</p>
+      </div>
+      <div class="workspace">
+        <section class="panel" aria-labelledby="archive-heading">
+          <h2 id="archive-heading">Flame archive</h2>
+          <p>Use a sequence-only archive with external media. Include the extensionless header and its first <code>.seg</code> file if available. 1 GB total.</p>
+          <div class="file-zone" id="drop">
+            <label class="choose" for="files">Choose archive files</label>
+            <input type="file" id="files" multiple aria-describedby="file-detail">
+            <span id="file-detail">or drop files here</span>
+          </div>
+          <ul class="file-list" id="file-list" hidden></ul>
+          <div class="actions">
+            <button type="button" id="scan" disabled>Read archive</button>
+            <button class="quiet" type="button" id="reset" hidden>Remove archive</button>
+          </div>
+          <progress id="progress" max="100" value="0" aria-label="Upload progress" hidden></progress>
+          <p class="notice" id="upload-status" role="status" hidden></p>
+          <p class="error" id="upload-error" role="alert" hidden></p>
+        </section>
+        <form class="panel" id="export" aria-labelledby="export-heading" hidden>
+          <h2 id="export-heading">Resolve timeline</h2>
+          <div class="format-grid">
+            <div>
+              <label for="timeline">Sequence</label>
+              <select id="timeline" required></select>
+              <p class="notice" id="sequence-info" aria-live="polite"></p>
+            </div>
+            <div>
+              <label for="scale">Resolve input scaling</label>
+              <select id="scale">
+                <option value="preserve">Preserve Flame framing</option>
+                <option value="fit">Fit entire image</option>
+                <option value="fill">Fill and crop edges</option>
+                <option value="center">Center crop without resizing</option>
+                <option value="stretch">Stretch to fill</option>
+              </select>
+            </div>
+          </div>
+          <details id="unavailable" hidden>
+            <summary id="unavailable-label">Sequences needing manual recovery</summary>
+            <ul id="unavailable-list"></ul>
+          </details>
+          <div class="mapping">
+            <label class="toggle"><input type="checkbox" id="mapping-enabled"> Remap media paths</label>
+            <div id="mapper" hidden>
+              <p>Only the matching directory prefix changes. The remaining folders and filename stay the same.</p>
+              <div class="actions">
+                <button class="secondary" type="button" id="add-bases">Add source base paths</button>
+                <button class="quiet" type="button" id="add-map">Add mapping</button>
+              </div>
+              <div id="rows"></div>
+              <p class="notice" id="mapping-status" role="status" hidden></p>
+            </div>
+          </div>
+          <button type="submit" id="create">Prepare .drt</button>
+          <p class="error" id="export-error" role="alert" hidden></p>
+        </form>
+        <section id="result" class="panel" aria-labelledby="result-heading" hidden>
+          <div class="result-title">
+            <div>
+              <h2 id="result-heading">Timeline ready</h2>
+              <p id="result-meta"></p>
+            </div>
+            <div class="actions result-buttons">
+              <a class="button" id="download" download>Download .drt</a>
+              <button class="secondary" id="print" type="button">Print review</button>
+            </div>
+          </div>
+          <h3>Effects and conform review</h3>
+          <p id="report-summary"></p>
+          <div class="table-scroll" id="report-table">
+            <table>
+              <thead><tr><th scope="col">Frame</th><th scope="col">Clip</th><th scope="col">Review</th></tr></thead>
+              <tbody id="report"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

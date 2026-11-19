@@ -1,0 +1,29 @@
+[Unit]
+Description=Flame2Resolve archive conversion
+After=network.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+StateDirectory=flame2resolve
+StateDirectoryMode=0700
+LoadCredential=password-verifier:/etc/flame2resolve/password-verifier
+EnvironmentFile=-/etc/flame2resolve/service.env
+Environment=PYTHONDONTWRITEBYTECODE=1
+WorkingDirectory=/opt/flame2resolve
+ExecStart=/usr/bin/python3 -m flame2resolve serve --state /var/lib/flame2resolve --verifier ${CREDENTIALS_DIRECTORY}/password-verifier
+Restart=on-failure
+RestartSec=3s
+UMask=0077
+MemoryMax=768M
+TasksMax=32
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectHome=yes
+ProtectSystem=strict
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+IPAddressDeny=any
+IPAddressAllow=localhost
+
+[Install]
+WantedBy=multi-user.target
